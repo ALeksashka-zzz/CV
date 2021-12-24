@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
  texlive-fonts-extra \
  texlive-latex-extra
 
-CMD pdflatex \
- -interaction=nonstopmode \
- -output-directory /pdf \
- /src/main.tex
+COPY /src/main.tex /src/main.tex
+
+CMD ["bash"]
