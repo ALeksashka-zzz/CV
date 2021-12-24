@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 
-ENV DEBIAN_FRONTEND="noninteractive" 
-TZ="Europe/Moscow"
+ENV DEBIAN_FRONTEND="noninteractive" TZ="Europe/Moscow"
 
 RUN apt-get update && apt-get install -y \
  texlive-base \
