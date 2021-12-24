@@ -9,8 +9,8 @@ jobs:
             - name: Build docker
               run: docker build -t mydocker .
             - name: Run docker
-              run: docker run -i mydocker /bin/bash
-	    - name: Generated PDF file
+              run: docker run -it mydocker /bin/bash
+            - name: Generated PDF file
               uses: actions/upload-artifact@v2
               with:
                 name: main.pdf
