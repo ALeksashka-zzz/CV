@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV DEBIAN_FRONTEND="noninteractive" TZ="Europe/London"
+ENV DEBIAN_FRONTEND="noninteractive" TZ="Europe/Moscow"
 
 RUN apt-get update && apt-get install -y \
  texlive-base \
@@ -10,6 +10,6 @@ RUN apt-get update && apt-get install -y \
  texlive-fonts-extra \
  texlive-latex-extra
 
-COPY main.tex /main.tex
+COPY src/main.tex /main.tex
 
 CMD ["bash"]
