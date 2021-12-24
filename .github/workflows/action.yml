@@ -9,7 +9,7 @@ jobs:
             - name: Build docker
               run: docker build -t mydocker .
             - name: Run docker
-              run: docker run -it mydocker /bin/bash
+              run: docker run -i mydocker /bin/bash
             - uses: actions/upload-artifact@v2
               with:
                 name: Resume
