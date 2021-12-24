@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  create_pdf:
+    runs-on: ubuntu-18.04
+    name: Create PDF out of main.tex
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build docker
+	run: docker build -t mydocker .
+      - name: Run docker 
+	run: docker run -it mydocker /bin/bash
+      - uses: actions/upload-artifact@v2
+	with:
+	  name: Resume
+	  path: /src/main.pdf
