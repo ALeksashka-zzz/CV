@@ -19,3 +19,24 @@ jobs:
               uses: actions/download-artifact@v2
               with:
                 name: cv
+
+    publish_pdf:
+        runs-on: ubuntu-18.04
+        name: Publish PDF to Github Pages
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                ref: artifacts
+            - name: Set git config and add changes
+              run: |
+                  git config --global user.email "ievleva.alexa@gmail.com"
+                  git config --global user.name "Sasha Ievleva"
+            - name: Removw old PDF
+              run: rm cv.pdf
+            - name: Publish new PDF
+              run: |
+                  git add cv.pdf
+                  git commit -m "Added changes to CV"
+                  git push origin artifacts
+~                                           
