@@ -10,7 +10,7 @@ jobs:
               run: docker build -t mydocker .
             - name: Run docker
               run: docker run -v ${{github.WORKSPACE}}/src:/src mydocker
-            - name: hmmm2
+            - name: Upload PDF
               uses: actions/upload-artifact@v2
               with:
                 name: cv
@@ -32,7 +32,7 @@ jobs:
               run: |
                   git config --global user.email "ievleva.alexa@gmail.com"
                   git config --global user.name "Sasha Ievleva"
-            - name: Removw old PDF
+            - name: Remove old PDF
               run: rm cv.pdf
             - name: Publish new PDF
               run: |
