@@ -13,7 +13,7 @@ jobs:
             - name: Upload PDF
               uses: actions/upload-artifact@v2
               with:
-                name: cv.pdf
+                name: cv
                 path: ${{github.WORKSPACE}}/src/main.pdf
 
     publish_pdf:
@@ -27,13 +27,13 @@ jobs:
             - name: Download PDF file
               uses: actions/download-artifact@v2
               with:
-                name: cv.pdf
+                name: cv
             - name: Set git config and add changes
               run: |
                   git config --global user.email "ievleva.alexa@gmail.com"
                   git config --global user.name "Sasha Ievleva"
             - name: Publish new PDF
               run: |
-                  git add cv.pdf
+                  git add main.pdf
                   git commit -m "Added changes to CV"
                   git push origin artifacts                                           
