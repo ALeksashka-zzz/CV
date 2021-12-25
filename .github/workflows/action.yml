@@ -38,5 +38,4 @@ jobs:
               run: |
                   git add cv.pdf
                   git commit -m "Added changes to CV"
-                  git push origin artifacts
-~                                           
+                  git push origin artifacts                                           
