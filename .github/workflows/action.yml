@@ -13,7 +13,7 @@ jobs:
             - name: Upload PDF
               uses: actions/upload-artifact@v2
               with:
-                name: cv
+                name: cv.pdf
                 path: ${{github.WORKSPACE}}/src/main.pdf
             - name: Download PDF file
               uses: actions/download-artifact@v2
