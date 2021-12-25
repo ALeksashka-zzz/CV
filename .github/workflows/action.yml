@@ -10,7 +10,10 @@ jobs:
               run: docker build -t mydocker .
             - name: Run docker
               run: docker run -i mydocker /bin/bash
-            - uses: actions/upload-artifact@v2
+            - name: hmmm
+              run: docker cp mydocker:/src/main.pdf /src/main.pdf
+            - name: hmmm2
+              uses: actions/upload-artifact@v2
               with:
                 name: cv
                 path: /src/main.pdf
