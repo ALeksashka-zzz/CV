@@ -15,12 +15,9 @@ jobs:
               with:
                 name: cv
                 path: ${{github.WORKSPACE}}/src/main.pdf
-            - name: Download PDF file
-              uses: actions/download-artifact@v2
-              with:
-                name: cv.pdf
 
     publish_pdf:
+        needs: create_pdf
         runs-on: ubuntu-18.04
         name: Publish PDF to Github Pages
         steps:
@@ -28,14 +25,16 @@ jobs:
               uses: actions/checkout@v2
               with:
                 ref: artifacts
+            - name: Download PDF file
+              uses: actions/download-artifact@v2
+              with:
+                name: cv
             - name: Set git config and add changes
               run: |
                   git config --global user.email "ievleva.alexa@gmail.com"
                   git config --global user.name "Sasha Ievleva"
-            - name: Remove old PDF
-              run: rm cv.pdf
             - name: Publish new PDF
               run: |
-                  git add cv.pdf
+                  git add main.pdf
                   git commit -m "Added changes to CV"
                   git push origin artifacts
