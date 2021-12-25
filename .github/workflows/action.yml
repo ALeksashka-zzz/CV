@@ -17,6 +17,7 @@ jobs:
                 path: ${{github.WORKSPACE}}/src/main.pdf
 
     publish_pdf:
+        needs: create_pdf
         runs-on: ubuntu-18.04
         name: Publish PDF to Github Pages
         steps:
