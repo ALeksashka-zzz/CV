@@ -9,9 +9,7 @@ jobs:
             - name: Build docker
               run: docker build -t mydocker .
             - name: Run docker
-              run: docker run -i mydocker /bin/bash
-            - name: hmmm
-              run: docker cp mydocker:/src/main.pdf src/main.pdf
+              run: docker run -i --mount type=bind,source="$(pwd)"/src,target=/src mydocker /bin/bash
             - name: hmmm2
               uses: actions/upload-artifact@v2
               with:
