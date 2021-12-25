@@ -18,7 +18,7 @@ jobs:
             - name: Download PDF file
               uses: actions/download-artifact@v2
               with:
-                name: cv
+                name: cv.pdf
 
     publish_pdf:
         runs-on: ubuntu-18.04
