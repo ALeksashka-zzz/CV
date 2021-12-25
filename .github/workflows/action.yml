@@ -32,8 +32,6 @@ jobs:
               run: |
                   git config --global user.email "ievleva.alexa@gmail.com"
                   git config --global user.name "Sasha Ievleva"
-            - name: Remove old PDF
-              run: rm cv.pdf
             - name: Publish new PDF
               run: |
                   git add cv.pdf
