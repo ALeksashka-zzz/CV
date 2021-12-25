@@ -10,10 +10,10 @@ RUN apt-get update && apt-get install -y \
  texlive-fonts-extra \
  texlive-latex-extra
 
-COPY ./src/main.tex /src/main.tex
+COPY /src/main.tex /src/main.tex
 
-COPY ./src/build_script.sh ./src/build_script.sh
+COPY /src/build_script.sh /src/build_script.sh
 
-RUN chmod +x ./src/build_script.sh
+RUN chmod +x /src/build_script.sh
 
-ENTRYPOINT ["./src/build_script.sh"]
+ENTRYPOINT ["bash", "/src/build_script.sh"]
