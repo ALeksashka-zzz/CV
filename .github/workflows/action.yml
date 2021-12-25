@@ -9,7 +9,7 @@ jobs:
             - name: Build docker
               run: docker build -t mydocker .
             - name: Run docker
-              run: docker run --mount type=bind,source=`pwd`,target=/src mydocker /bin/bash
+              run: docker run -v ${{github.WORKSPACE}}/src:/src mydocker /bin/bash
             - name: hmmm2
               uses: actions/upload-artifact@v2
               with:
