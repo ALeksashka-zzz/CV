@@ -1,7 +1,7 @@
 # CV
 
- Имя: **Саша Иевлева** 
+Name: **Sasha Ievleva** 
  
- Группа: **БПМИ203**
+Group: **БПМИ203**
 
- Ссылка: **https://aleksashka-zzz.github.io/CV/main.pdf**
+Link: **https://aleksashka-zzz.github.io/CV/main.pdf**
