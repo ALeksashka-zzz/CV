@@ -19,6 +19,14 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\makeatletter
+\newcommand{\github}[1]{%
+   \href{#1}{\faGithubSquare}%
+}
+\makeatother
 
 
 %----------FONT OPTIONS----------
@@ -27,7 +35,6 @@
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
-
 % serif
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
@@ -115,7 +122,8 @@
     \Huge \textbf{\scshape Sasha Ievleva} \\ \vspace{1pt}
     \small 8 (916) 174-10-47 $|$ \href{mailto:x@x.com}{\underline{ievleva.alexa@gmail.com}} $|$ 
     %\href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
-    \href{https://github.com/Unconsciouszzz}{\underline{github.com/Unconsciouszzz}}
+    %\href{https://github.com/Unconsciouszzz}{\underline{github.com/Unconsciouszzz}}
+    \extrainfo{\faGithub\href{https://github.com/ALeksashka-zzz}{ github.com/ALeksashka-zzz}}%
 \end{center}
 
 
@@ -123,12 +131,12 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Higher School of Economics}{Moscow, Russia}
+      {NRU Higher School of Economics}{Moscow, Russia}
       {Bachelor Student in Applied Mathematics and Computer Science}{Sep. 2020 -- Present}
       \resumeItemListStart
         \resumeItem{Merit-based scholarship, covering 100\% of tuition.}
         \resumeItem{\textbf{Coursework}: Algorithms and Data Structures (advanced), Computer Architecture, Advanced C++, Linear Algebra and Geometry, Probability Theory, Fundamental of Matrix Computations, Calculus, Discrete Mathematics.}
-        \resumeItem{\textbf{GPA} (freshman year): 8.18/10.0}
+        \resumeItem{\textbf{GPA} (freshman year): 8.52/10.0}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -149,7 +157,7 @@
     
 \resumeSubHeadingListStart
         \resumeProjectHeading
-            {\textbf{\href{https://github.com/ALeksashka-zzz/Mini-Course}{\underline{Analysis of human movement data collected via mobile phone}}}}{HSE AMI, 2021}
+            {\textbf{ Analysis of human movement data collected via mobile phone \href{https://github.com/ALeksashka-zzz/Mini-Course}{\faGithubSquare}}}{HSE AMI, 2021}
             \resumeItemListStart
                 \resumeItem{Collected data via g-Force such as walking, running, cycling and driving 
                 in order to implement algorithm to learn how to distinguish one another.}
@@ -160,11 +168,17 @@
     
 \resumeSubHeadingListStart
         \resumeProjectHeading
-            {\textbf{\href{https://github.com/ALeksashka-zzz/HashMap/tree/ALeksashka-zzz-patch-1}{\underline{Implemented HashMap}} }}{HSE AMI, 2021}
+            {\textbf{Completed several coding projects in C++}} {HSE AMI, 2021 - 2022}
             \resumeItemListStart
-                \resumeItem{Learnt about different approaches to collision resolutions. Implemented one with open addressing.}
-                \resumeItem{Improved C++ skills.}
-
+                \resumeItem{
+                \href{https://github.com/ALeksashka-zzz/HashMap/tree/ALeksashka-zzz-patch-1}{\faGithubSquare}
+                Implemented HashMap. Learnt about different approaches to collision resolutions. Implemented one with open addressing.}
+                \resumeItem{
+                \href{https://github.com/ALeksashka-zzz/SmartPointers.git}{\faGithubSquare}
+                Implemented Smart Pointers: unique\_ptr, weak\_ptr and shared\_ptr (including make\_shared()) from standard C++ Library.}
+                \resumeItem{ 
+                \href{https://github.com/ALeksashka-zzz/LispInterpreter.git}{\faGithubSquare}
+                Implemented interpreter for Scheme language.}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -174,14 +188,6 @@
             \resumeItemListStart
                 \resumeItem{Prepared materials and gave 7 lectures. Developed a range of algorithms’ syllabi.}
                 \resumeItem{Created 3 programming contests.}
-            \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-\resumeSubHeadingListStart
-        \resumeProjectHeading
-            {\textbf{Website with information about films}}{Academic School 1534, 2019}
-            \resumeItemListStart
-                \resumeItem{Improved programming skills in HTML/CSS, SQL.}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -227,8 +233,7 @@
         \resumeProjectHeading
             {\textbf{Education: }}{}
             \resumeItemListStart
-                \resumeItem{Summer Informatics School 2017 (Kostroma, Russia), 2019 (Narva, Estonia). Studied advanced algorithms and data structures.}
-                \resumeItem{Summer Informatics Camp 2018 (Perm, Russia). Studied advanced algorithms and data structures.}
+                \resumeItem{Summer Informatics School 2017 (Kostroma, Russia), 2019 (Narva, Estonia). Summer Informatics Camp 2018 (Perm, Russia). Studied advanced algorithms and data structures.}
                 \resumeItem{Programming School "GoTo" 2019 (Moscow, Russia). Studied functional programming and data analysis.}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
