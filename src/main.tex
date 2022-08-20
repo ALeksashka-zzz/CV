@@ -10,6 +10,7 @@
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
+\usepackage{bold-extra}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
@@ -19,6 +20,15 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\makeatletter
+\newcommand{\github}[1]{%
+   \href{#1}{\faGithubSquare}%
+}
+\makeatother
 
 
 %----------FONT OPTIONS----------
@@ -27,11 +37,9 @@
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
-
 % serif
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
-
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -54,8 +62,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-4pt}\bfseries\scshape\raggedright\large
+}{}{0em}{}[\color{black}{\titlerule[1.5pt]} \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -64,38 +72,38 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-4pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textrm{\small#3} & \textrm{\small #4} \\
+      \textbf{\small#1} & \small#2 \\
+      \textrm{\small#3} & \textrm{\small#4} \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textrm{\small#1} & \textrm{\small #2} \\
+      \textrm{\small#1} & \textrm{\small#2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
+      \small#1 & \small#2 \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\diamond$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-13pt}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
@@ -113,9 +121,10 @@
 
 \begin{center}
     \Huge \textbf{\scshape Sasha Ievleva} \\ \vspace{1pt}
-    \small 8 (916) 174-10-47 $|$ \href{mailto:x@x.com}{\underline{ievleva.alexa@gmail.com}} $|$ 
+    \small 8 (916) 174-10-47 $|$ \href{mailto:x@x.com}{\underline{aleksashka.ievleva@gmail.com}} $|$ 
     %\href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
-    \href{https://github.com/Unconsciouszzz}{\underline{github.com/Unconsciouszzz}}
+    %\href{https://github.com/Unconsciouszzz}{\underline{github.com/Unconsciouszzz}}
+    \extrainfo{\faGithub\href{https://github.com/Aleksashka-i}{ github.com/Aleksashka-i}}%
 \end{center}
 
 
@@ -123,12 +132,13 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Higher School of Economics}{Moscow, Russia}
-      {Bachelor Student in Applied Mathematics and Computer Science}{Sep. 2020 -- Present}
+      {HSE University}{Moscow, Russia}
+      {B.S. in Applied Mathematics and Computer Science}{Sep. 2020 -- Present}
       \resumeItemListStart
+        \resumeItem{\textbf{Specialization}: Distributed Systems.}
+        \resumeItem{\textbf{Coursework}: Algorithms and Data Structures (advanced), Computer Architecture, Advanced C\texttt{++}, Linear Algebra and Geometry, Probability Theory, Fundamentals of Matrix Computations, Calculus, Discrete Mathematics.}
+        \resumeItem{\textbf{GPA} (freshman and sophomore year): 8.25/10.0}
         \resumeItem{Merit-based scholarship, covering 100\% of tuition.}
-        \resumeItem{\textbf{Coursework}: Algorithms and Data Structures (advanced), Computer Architecture, Advanced C++, Linear Algebra and Geometry, Probability Theory, Fundamental of Matrix Computations, Calculus, Discrete Mathematics.}
-        \resumeItem{\textbf{GPA} (freshman year): 8.18/10.0}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -138,52 +148,58 @@
 
 \resumeSubHeadingListStart
         \resumeProjectHeading
-            {\textbf{Teaching assistant of the Linear Algebra and Geometry course}}{HSE AMI, 2021 - Present}
+            {\textbf{Teaching assistant in HSE University:}}{}
+            \begin{itemize}[leftmargin=0.15in]
+                \item[]
+                \small\begin{tabular*}{0.95\textwidth}[t]{l@{\extracolsep{\fill}}r}
+                \textbf{Linear Algebra and Geometry course} & Sep. 2021 -- Jun. 2022 \\
+                \end{tabular*}\vspace{-3pt}
+                \item[]
+                \small\begin{tabular*}{0.95\textwidth}[t]{l@{\extracolsep{\fill}}r}
+                \textbf{Probability Theory and Mathematical Statistics course} & Sep. 2022 -- Present \\
+                \end{tabular*}\vspace{-3pt}
+            \end{itemize}\vspace{-10pt}
             \resumeItemListStart
-                \resumeItem{Provide student with consulting hours and analysis of previous years' exams and tests.}
-                \resumeItem{Mark submitted homeworks.}
-                \resumeItem{Help build students' intuition for LAaG material. Help with developing the structure of course, organization and conductions of colloquiums.}
-
+                \resumeItem{Provide students with consulting hours and analysis of previous years' exams and tests.}
+                \resumeItem{Mark submitted homework.}
+                \resumeItem{Help build students' intuition for challenging material. Help with developing the structure of course, \\ organization and conduction of colloquiums.}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
-    
+    \vspace{2pt}
 \resumeSubHeadingListStart
         \resumeProjectHeading
-            {\textbf{\href{https://github.com/ALeksashka-zzz/Mini-Course}{\underline{Analysis of human movement data collected via mobile phone}}}}{HSE AMI, 2021}
+            {\textbf{Completed several coding projects in C\texttt{++}}} {HSE AMI, 2021 - 2022}
+            \resumeItemListStart
+                \resumeItem{
+                \href{https://github.com/Aleksashka-i/HashMap/tree/ALeksashka-i-patch-1}{\faGithubSquare}
+                Implemented HashMap. Learnt about different approaches to collision resolutions. \\\hspace{0.3cm} Implemented one with open addressing.}
+                \resumeItem{
+                \href{https://github.com/Aleksashka-i/SmartPointers.git}{\faGithubSquare}
+                Implemented Smart Pointers: unique\_ptr, weak\_ptr and shared\_ptr (including make\_shared())\\\hspace{0.3cm} from standard C\texttt{++} Library.}
+                \resumeItem{ 
+                \href{https://github.com/Aleksashka-i/LispInterpreter.git}{\faGithubSquare}
+                Implemented interpreter for Scheme language.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    \vspace{5pt}
+\resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{Telegram bot with CI and automatic deployment}}{Personal project, 2022}
+            \resumeItemListStart
+                \resumeItem{Used Docker (Watchtower included) and Github Actions to set up CI/CD for deployment \\ to YandexCloud. Implemented a Telegram bot.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    \vspace{5pt}
+\resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{Analysis of human movement data collected via mobile phone \href{https://github.com/Aleksashka-i/Mini-Course}{\faGithubSquare}}}{HSE AMI, 2021}
             \resumeItemListStart
                 \resumeItem{Collected data via g-Force such as walking, running, cycling and driving 
-                in order to implement algorithm to learn how to distinguish one another.}
+                in order to implement \\ algorithm to learn how to distinguish one another.}
                 \resumeItem{Learnt about Machine Learning (worked with numpy, pandas, matlpoltlib and seaborn libraries in Python). Implemented Fourier transform.}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
     
-    
-\resumeSubHeadingListStart
-        \resumeProjectHeading
-            {\textbf{\href{https://github.com/ALeksashka-zzz/HashMap/tree/ALeksashka-zzz-patch-1}{\underline{Implemented HashMap}} }}{HSE AMI, 2021}
-            \resumeItemListStart
-                \resumeItem{Learnt about different approaches to collision resolutions. Implemented one with open addressing.}
-                \resumeItem{Improved C++ skills.}
-
-            \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-\resumeSubHeadingListStart
-        \resumeProjectHeading
-            {\textbf{Week-long Programming Camp for 7-10th grade students}}{Academic School 1534, 2020}
-            \resumeItemListStart
-                \resumeItem{Prepared materials and gave 7 lectures. Developed a range of algorithms’ syllabi.}
-                \resumeItem{Created 3 programming contests.}
-            \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-\resumeSubHeadingListStart
-        \resumeProjectHeading
-            {\textbf{Website with information about films}}{Academic School 1534, 2019}
-            \resumeItemListStart
-                \resumeItem{Improved programming skills in HTML/CSS, SQL.}
-            \resumeItemListEnd
-    \resumeSubHeadingListEnd
 
 %-----------Competitive Programming-----------
 \section{Competitive Programming}
@@ -196,29 +212,21 @@
       {Silver Medal -- 225th place of about 3500 participants.} {}
     \resumeSubheading
       {Team Olympiad Contest in Programming “Vysshaya Proba” by HSE university (final)}{2019}
-      {Silver Medal -- 38th place of about 250 participants.} {}
-    \resumeSubheading
-      {All-Russian Olympiad of Computer Science “School Olympiad organized by SPbU”}{2020}
-      {Participant -- 122nd place of about 500 participants.} {}
+      {Silver Medal -- 38th place of about 300 participants.} {}
 \resumeSubHeadingListEnd
-
-
+\vspace{2pt}
 %-----------Technical Skills-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: C++, Python, SQL, HTML/CSS, basic Haskell.} \\
-     \textbf{Tools}{: Git, Shell, LaTeX.} \\
+     \textbf{Languages}{: C/C\texttt{++}, Python, SQL, HTML/CSS, Assembly, basic Haskell.} \\
+     \textbf{Tools}{: Git, Shell, Docker, Vim, GDB, LaTeX.} \\
      %\textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
     %\textbf{Developer Tools}{: Git, VS Code.} \\
-    }\vspace{-4pt}}
-    
+    }}
 \end{itemize}
-
-
-%-------------------------------------------
-
-
+\vspace{-16pt}
+%------------------------------------------
 %
 %-----------ACHIEVEMENTS-----------
 \section{Achievements}
@@ -227,8 +235,7 @@
         \resumeProjectHeading
             {\textbf{Education: }}{}
             \resumeItemListStart
-                \resumeItem{Summer Informatics School 2017 (Kostroma, Russia), 2019 (Narva, Estonia). Studied advanced algorithms and data structures.}
-                \resumeItem{Summer Informatics Camp 2018 (Perm, Russia). Studied advanced algorithms and data structures.}
+                \resumeItem{Summer Informatics School 2017 (Kostroma, Russia), 2018 (Perm, Russia), 2019 (Narva, Estonia). Studied advanced algorithms and data structures.}
                 \resumeItem{Programming School "GoTo" 2019 (Moscow, Russia). Studied functional programming and data analysis.}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
@@ -247,7 +254,7 @@
 \section{Additional information}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Russian (native), English (fluent; IELTS -- Band 7.5).} \\
+     \textbf{Languages}{: English (fluent; IELTS -- Band 7.5), Russian (native).} \\
      \textbf{Hobbies}{: Russian catamaran paddling: Karelia (2017, 2018; distance of 100km), Karelia (2019, 2021; distance of 200 km); Attended Art Studio (2006-Present): numerous exhibitions in different galleries.} \\
     }}
 \end{itemize}
