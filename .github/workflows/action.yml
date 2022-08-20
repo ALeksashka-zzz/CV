@@ -1,7 +1,7 @@
 on: [push]
 jobs:
     create_pdf:
-        runs-on: ubuntu:18.04
+        runs-on: ubuntu-18.04
         name: Create PDF out of main.tex
         steps:
             - name: Checkout
@@ -18,7 +18,7 @@ jobs:
 
     publish_pdf:
         needs: create_pdf
-        runs-on: ubuntu:18.04
+        runs-on: ubuntu-18.04
         name: Publish PDF to Github Pages
         steps:
             - name: Checkout
